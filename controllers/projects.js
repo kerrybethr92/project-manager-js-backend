@@ -1,32 +1,32 @@
 const express = require('express');
 const router = express.Router();
-const Projects = require('../models/projects.js');
+const Garments = require('../models/projects.js');
 
 // Index route
 router.get('/', (req, res) => {
-    Projects.find({}, (err, foundProjects) => {
-        res.json(foundProjects);
+    Garments.find({}, (err, foundGarments) => {
+        res.json(foundGarments);
     });
 });
 
 // Create Route
 router.post('/', (req, res) => {
-    Projects.create(req.body, (err, createdProject) => {
-        res.json(createdProject);
+    Garments.create(req.body, (err, createdGarment) => {
+        res.json(createdGarment);
     });
 });
 
 // Delete Route
 router.delete('/:id', (req, res) => {
-    Projects.findByIdAndRemove(req.params.id, (err, deletedProject) => {
-        res.json(deletedProject);
+    Garments.findByIdAndRemove(req.params.id, (err, deletedGarment) => {
+        res.json(deletedGarment);
     });
 });
 
 //// Update Route
 router.put('/:id', (req, res) => {
-    Projects.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedProject) => {
-        res.json(updatedProject);
+    Garments.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedGarment) => {
+        res.json(updatedGarment);
     });
 });
 

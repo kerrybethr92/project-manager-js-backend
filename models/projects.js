@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const projectSchema = new mongoose.Schema({
+const garmentSchema = new mongoose.Schema({
     title: String,
-    description: String,
+    isComplete: Boolean,
     // add picture here, and some other properties
 });
 
-const Projects = mongoose.model('Project', projectSchema);
+const Garments = mongoose.model('Garment', garmentSchema);
 
-module.exports = Projects;
+module.exports = Garments;

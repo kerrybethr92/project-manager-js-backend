@@ -7,8 +7,8 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
-const projectsController = require('./controllers/projects.js');
-app.use('/projects', projectsController);
+const garmentsController = require('./controllers/projects.js');
+app.use('/garments', garmentsController);
 
 app.listen(3000, () => {
     console.log('listening on 3000');
