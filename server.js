@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); // use .json(), not .urlencoded()
 app.use(cors())
 
 const garmentsController = require('./controllers/projects.js');
